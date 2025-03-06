@@ -19,11 +19,15 @@ from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+#bot = Client(
+#	"bot",
+#	api_id=api_id,
+#	api_hash=api_hash,
+#	bot_token=bot_token)
 bot = Client(
-	"bot",
-	api_id=api_id,
-	api_hash=api_hash,
-	bot_token=bot_token)
+    "bot",
+    bot_token=bot_token  # Only use bot_token
+)
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
